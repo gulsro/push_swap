@@ -1,5 +1,23 @@
 #include "push_swap.h"
 
+void displayStack(stack *aStack)
+{
+	node *temp;
+
+	temp = aStack->top;
+	if (aStack->size > 0)
+	{
+		printf("The stack:\n");
+		while (temp)
+		{
+			printf("%d\n", temp->data);
+			temp = temp->next;
+		}
+	}
+	else
+		printf("The stack is empty.");
+}
+
 int isEmpty(stack *aStack)
 {
 	if (aStack->top == NULL)
@@ -35,7 +53,6 @@ stack *initializeStack()
 void freeNode(node *aNode)
 {
 	free(aNode);
-	aNode->next = NULL;
 }
 
 void freeStack(stack *aStack)
@@ -43,11 +60,12 @@ void freeStack(stack *aStack)
 	node *temp;
 
 	temp = aStack->top;
-	while (temp->top)
+	while (temp)
 	{
 		temp = temp->next;
-		freeNode(temp);
-		aStack->top
+		freeNode(aStack->top);
+		aStack->size--;
+		aStack->top = temp;
 	}
 }
 
@@ -90,25 +108,3 @@ node *pop(stack *aStack)
 	return (temp);
 }
 
-int main(int argc, char *argv[])
-{
-	stack *a;
-
-	a = initializeStack();
-	if (argc == 6)
-	{
-		printf("The stack: ");
-		for(int i = 1; i < 6; i++)
-		{
-			push(a, atoi(argv[i]));
-		}
-//		sa(a);
-//		pop(a);
-		printf("top %d\n", a->top->data);
-		printf("2nd %d\n", a->top->next->data);
-               printf("3rd  %d\n", a->top->next->next->data);
-		printf("4th  %d\n", a->top->next->next->next->data);
-		printf("5th  %d\n", a->top->next->next->next->next->data);
-		printf("%d\n", pop(a)->data);
-	}
-}

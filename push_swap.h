@@ -17,12 +17,13 @@ typedef struct Stack
 }stack;
 
 void push(stack *aStack, int value);
+void displayStack(stack *aStack);
 stack *initializeStack();
 node *createNode(int value);
 int isEmpty(stack *aStack);
 node *pop(stack *aStack);
 
-void sa(stack *a);
 void swap(int *x, int *y);
+void sa(stack *a);
 
 #endif
