@@ -22,6 +22,8 @@ stack *initializeStack();
 node *createNode(int value);
 int isEmpty(stack *aStack);
 node *pop(stack *aStack);
+void freeStack(stack *aStack);
+void freeNode(node *aNode);
 
 void swap(int *x, int *y);
 void sa(stack *a);

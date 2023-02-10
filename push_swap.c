@@ -95,7 +95,10 @@ node *pop(stack *aStack)
 {
 	node *temp;
 	if (aStack->size == 0)
+	{
+		freeStack(aStack);
 		return NULL;
+	}
 	temp = aStack->top;
 	if (aStack->size == 1)
 	{

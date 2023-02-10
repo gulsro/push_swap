@@ -13,4 +13,7 @@ void sa(stack *a)
 {
 	if (a->size > 1)
 		swap(&a->top->data, &a->top->next->data);
+	printf("sa\n");
 }
+
+
