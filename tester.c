@@ -7,6 +7,7 @@ void test_popEmptyStack()
 	s = initializeStack();
 	assert(pop(s) == NULL);
 	freeStack(s);
+	free(s);
 	printf("test_popEmptyStack OK\n");
 }
 
@@ -43,6 +44,7 @@ void test_popFilledStack()
 	temp = pop(s);
 	assert(temp == NULL);
 	freeStack(s);
+        free(s);	
 	printf("test_popFilledStack OK\n");
 }
 
@@ -72,6 +74,7 @@ void test_pop_push_mix()
 	temp = pop(s);
 	assert(temp == NULL);
 	freeStack(s);
+	free(s);
 	printf("test_pop_push_mix OK\n");
 }
 

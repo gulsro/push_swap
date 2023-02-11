@@ -28,14 +28,11 @@ int isEmpty(stack *aStack)
 node *createNode(int value)
 {
 	node *newNode;
-	stack *a;
 
-	a = initializeStack();
 	newNode = malloc(sizeof(node));
 	if (!newNode)
 		return NULL;
 	newNode->data = value;
-	a->top = newNode;
 	newNode->next = NULL;
 	return (newNode);
 }
@@ -80,7 +77,7 @@ void push(stack *aStack, int value)
 	if (aStack->top == NULL) 
 	{	
 		aStack->top = newNode;
-		newNode->next = NULL;
+	//	newNode->next = NULL;
 		aStack->size++;
 	}
 	else 
