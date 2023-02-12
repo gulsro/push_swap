@@ -27,5 +27,15 @@ void	freeStack(stack *aStack);
 void	swap(int *x, int *y);
 void	sa(stack *a);
 void	sb(stack *b);
+void	ss(stack *a, stack *b);
+void	_swap(stack *s, const char *msg);
+
+void	pa(stack *a, stack *b);
+void	pb(stack *a, stack *b);
+void	_pop_push(stack *from, stack *to, const char* msg);
+
+void	ra(stack *a);
+void	rb(stack *b);
+void	_rotate(stack *s, const char *msg);
 
 #endif

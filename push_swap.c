@@ -15,7 +15,7 @@ void displayStack(stack *aStack)
 		}
 	}
 	else
-		printf("The stack is empty.");
+		printf("The stack is empty.\n");
 }
 
 int isEmpty(stack *aStack)

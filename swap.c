@@ -11,16 +11,32 @@ void	swap(int *x, int *y)
 
 void	sa(stack *a)
 {
-	if (a->size > 1)
-		swap(&a->top->data, &a->top->next->data);
-	printf("sa\n");
+	_swap(a, "sa");
 }
 
 void	sb(stack *b)
 {
-	if (b ->size > 0)
-		swap(&b->top->data, &b->top->next->data);
-        printf("sb\n");
+	_swap(b, "sb");
 }
 
+void _swap(stack *s, const char *msg)
+{
+	if (s->size > 0)
+	{
+		swap(&s->top->data, &s->top->next->data);
+		printf("%s\n", msg);
+	}
+}
 
+void	ss(stack *a, stack *b) //it s written seperately because i dont want to printf
+{
+	if (a->size > 1)
+	{
+		swap(&a->top->data, &a->top->next->data);
+	}       
+	if (b->size > 1)
+	{
+		swap(&b->top->data, &b->top->next->data);
+	}
+	printf("ss\n");
+}

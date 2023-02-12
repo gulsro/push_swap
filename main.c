@@ -16,16 +16,13 @@ int main()
 	push(b, 11);
 	push(b, 12);
 
-	printf("a->> %d %d %d\n",a->top->data, a->top->next->data, a->top->next->next->data);
+	displayStack(a);
+        displayStack(b);
 
-	printf("b->> %d %d %d\n",b->top->data, b->top->next->data, b->top->next->next->data);
+	_rotate(a, "ra");
 
-	sa(a);
-	sb(b);
-	
 	printf("After swapping first elements:\n");
-	
-	printf("a->> %d %d %d\n",a->top->data, a->top->next->data, a->top->next->next->data);
 
-	printf("b->> %d %d %d\n",b->top->data, b->top->next->data, b->top->next->next->data);
+	displayStack(a);
+	displayStack(b);
 }
