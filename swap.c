@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void swap(int *x, int *y)
+void	swap(int *x, int *y)
 {
 	int temp;
 	
@@ -9,11 +9,18 @@ void swap(int *x, int *y)
 	*y = temp;
 }
 
-void sa(stack *a)
+void	sa(stack *a)
 {
 	if (a->size > 1)
 		swap(&a->top->data, &a->top->next->data);
 	printf("sa\n");
+}
+
+void	sb(stack *b)
+{
+	if (b ->size > 0)
+		swap(&b->top->data, &b->top->next->data);
+        printf("sb\n");
 }
 
 

@@ -29,7 +29,7 @@ node *createNode(int value)
 {
 	node *newNode;
 
-	newNode = malloc(sizeof(node));
+	newNode = (node *)malloc(sizeof(node));
 	if (!newNode)
 		return NULL;
 	newNode->data = value;
@@ -41,29 +41,25 @@ stack *initializeStack()
 {
 	stack *aStack;
 	
-	aStack = malloc(sizeof(stack));
+	aStack = (stack *)malloc(sizeof(stack));
 	aStack->size = 0;
 	aStack->top = NULL;
 	return (aStack);
 }
 
-void freeNode(node *aNode)
-{
-	free(aNode);
-}
-
 void freeStack(stack *aStack)
 {
 	node *temp;
+	node *next_temp;
 
 	temp = aStack->top;
 	while (temp)
 	{
-		temp = temp->next;
-		freeNode(aStack->top);
-		aStack->size--;
-		aStack->top = temp;
+		next_temp = temp->next;
+		free(temp);
+		temp = next_temp;
 	}
+	free(aStack);
 }
 
 void push(stack *aStack, int value)
@@ -77,15 +73,13 @@ void push(stack *aStack, int value)
 	if (aStack->top == NULL) 
 	{	
 		aStack->top = newNode;
-	//	newNode->next = NULL;
-		aStack->size++;
 	}
 	else 
 	{
 		newNode->next = aStack->top; 
 		aStack->top = newNode;
-		aStack->size++;
 	}
+	aStack->size++;
 }
 
 node *pop(stack *aStack)
@@ -93,17 +87,17 @@ node *pop(stack *aStack)
 	node *temp;
 	if (aStack->size == 0)
 	{
-		freeStack(aStack);
 		return NULL;
 	}
 	temp = aStack->top;
 	if (aStack->size == 1)
 	{
 		aStack->top = NULL;
-		aStack->size--;
-		return (temp);
 	}
-	aStack->top = aStack->top->next;
+	else
+	{
+		aStack->top = aStack->top->next;
+	}
 	aStack->size--;
 	return (temp);
 }
