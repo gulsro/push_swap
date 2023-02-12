@@ -58,9 +58,11 @@ void test_pop_push_mix()
 
 	push(s, 3);
 	push(s, 4);
-	pop(s);
+	temp = pop(s);
+	free(temp);
 	push(s, 5);
-	pop(s);
+	temp = pop(s);
+        free(temp);
 	push(s, 6);
 	
 	temp = pop(s);
