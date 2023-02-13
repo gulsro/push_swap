@@ -36,6 +36,12 @@ void	_pop_push(stack *from, stack *to, const char* msg);
 
 void	ra(stack *a);
 void	rb(stack *b);
-void	_rotate(stack *s, const char *msg);
+void	_rotate(stack *s);
+void	rr(stack *a, stack *b);
+
+void	rra(stack *a);
+void	rrb(stack *b);
+void	_reverse_rotate(stack *s);
+void	rrr(stack *a, stack *b);
 
 #endif

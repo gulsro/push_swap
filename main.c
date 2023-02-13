@@ -19,10 +19,14 @@ int main()
 	displayStack(a);
         displayStack(b);
 
-	_rotate(a, "ra");
+	rrr(a, b);
 
 	printf("After swapping first elements:\n");
 
 	displayStack(a);
 	displayStack(b);
+	
+	freeStack(a);
+	freeStack(b);
+	system("leaks another");
 }

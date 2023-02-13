@@ -2,32 +2,37 @@
 
 void	ra(stack *a)
 {
-	_rotate(a, "ra");
+	_rotate(a);
+	printf("ra\n");
 }
 
 void	rb(stack *b)
 {
-	_rotate(b, "rb");
+	_rotate(b);
+	printf("rb\n");
 }
 
-void	_rotate(stack *s, const char *msg)
+void	_rotate(stack *s)
 {
 	node *temp;
-	node *next_temp;
 
 	temp = s->top;
-	while (temp)
+	if (s->size > 1)
 	{
-		next_temp = temp->next;
-		swap(&temp->data, &next_temp->data);
-		temp = temp->next;
+		while (temp && temp->next)
+		{
+			temp = temp->next;
+		}
+		temp->next = s->top;
+		s->top = s->top->next;
+		temp->next->next = NULL;
 	}
 }
 
-1 2 3 4
-2 3 4 1
-3 4 1 2
-2 3 4 1
-
-1 = temp
-2 = next_temp
+void	rr(stack *a, stack *b)
+{
+	_rotate(a);
+	_rotate(b);
+	printf("rr\n");
+	
+}

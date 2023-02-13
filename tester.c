@@ -76,7 +76,7 @@ void test_pop_push_mix()
 	freeStack(s);
 	printf("test_pop_push_mix OK\n");
 }
-
+/*
 int main()
 {
 	
@@ -85,4 +85,4 @@ int main()
 	test_pop_push_mix();
 	
 }
-
+*/
