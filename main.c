@@ -6,23 +6,21 @@ int main()
 	stack *b;
 	
 	a = initializeStack();
-	b = initializeStack();
+//	b = initializeStack();
 	
 	push(a, 11);
 	push(a, 2);
 	push(a, 3);
 	push(a, 99);
-
+/*
 	push(b, 100);
 	push(b, 101);
 	push(b, 132);
-
+*/
 	displayStack(a);
-        displayStack(b);
+//        displayStack(b);
 
-	quickSort(a, a->top, lastNode(a));
-
-	printf("div = %d\n", partition(a, a->top, lastNode(a))->data);
+	b = insertionSort(a);
 	
 	printf("After swapping first elements:\n");
 
