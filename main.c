@@ -8,19 +8,22 @@ int main()
 	a = initializeStack();
 	b = initializeStack();
 	
-	push(a, 1);
+	push(a, 11);
 	push(a, 2);
 	push(a, 3);
+	push(a, 99);
 
-	push(b, 10);
-	push(b, 11);
-	push(b, 12);
+	push(b, 100);
+	push(b, 101);
+	push(b, 132);
 
 	displayStack(a);
         displayStack(b);
 
-	rrr(a, b);
+	quickSort(a, a->top, lastNode(a));
 
+	printf("div = %d\n", partition(a, a->top, lastNode(a))->data);
+	
 	printf("After swapping first elements:\n");
 
 	displayStack(a);
@@ -28,5 +31,5 @@ int main()
 	
 	freeStack(a);
 	freeStack(b);
-	system("leaks another");
+//	system("leaks another");
 }

@@ -44,4 +44,9 @@ void	rrb(stack *b);
 void	_reverse_rotate(stack *s);
 void	rrr(stack *a, stack *b);
 
+void	swap_int(int x, int y);
+node	*lastNode(stack *s);
+node	*partition(stack *s, node *start, node *end);
+void	quickSort(stack *s, node *start, node *end);
+
 #endif
