@@ -8,21 +8,25 @@ typedef struct Node
 {
 	int data;
 	struct Node *next;
+	struct Node *prev;
 }node;
 
 typedef struct Stack
 {
 	int size;
 	node *top;
+	node *end;
 }stack;
 
 void	push(stack *aStack, int value);
 void	displayStack(stack *aStack);
+void displayStackFromEnd(stack *aStack);
 stack	*initializeStack();
 node	*createNode(int value);
-int	isEmpty(stack *aStack);
+int		isEmpty(stack *aStack);
 node	*pop(stack *aStack);
 void	freeStack(stack *aStack);
+void	doublyMaker(stack *aStack);
 
 void	swap(int *x, int *y);
 void	sa(stack *a);

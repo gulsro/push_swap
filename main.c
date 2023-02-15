@@ -7,11 +7,12 @@ int main()
 	
 	a = initializeStack();
 //	b = initializeStack();
-	
+
 	push(a, 11);
 	push(a, 2);
 	push(a, 3);
 	push(a, 99);
+
 /*
 	push(b, 100);
 	push(b, 101);
@@ -22,12 +23,15 @@ int main()
 
 	b = insertionSort(a);
 	
-	printf("After swapping first elements:\n");
+	printf("After editing the stack:\n");
 
-	displayStack(a);
-	displayStack(b);
+	doublyMaker(b);
+
+
+//	displayStack(b);
+	displayStackFromEnd(b);
 	
 	freeStack(a);
-	freeStack(b);
+//	freeStack(b);
 //	system("leaks another");
 }
