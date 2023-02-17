@@ -18,15 +18,17 @@ typedef struct Stack
 	node *end;
 }stack;
 
-void	push(stack *aStack, int value);
+int	checkElemsRepeat(stack *aStack);
 void	displayStack(stack *aStack);
-void displayStackFromEnd(stack *aStack);
+void	displayStackFromEnd(stack *aStack);
+void	doublyMaker(stack *aStack);
+
 stack	*initializeStack();
 node	*createNode(int value);
 int		isEmpty(stack *aStack);
 node	*pop(stack *aStack);
 void	freeStack(stack *aStack);
-void	doublyMaker(stack *aStack);
+void	 push(stack *aStack, int value);
 
 void	swap(int *x, int *y);
 void	sa(stack *a);
@@ -48,7 +50,11 @@ void	rrb(stack *b);
 void	_reverse_rotate(stack *s);
 void	rrr(stack *a, stack *b);
 
-stack	*insertionSort(stack *a);
+stack	*stackSort(stack *a);
+
+node	*sortedInsert(stack *aStack, node *sorted, node *curr);
+void	insertionSort(stack *aStack);
+
 /*
 void	swap_int(int x, int y);
 node	*lastNode(stack *s);

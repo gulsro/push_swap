@@ -11,26 +11,23 @@ int main()
 	push(a, 11);
 	push(a, 2);
 	push(a, 3);
-	push(a, 99);
+	push(a, 22);
 
-/*
-	push(b, 100);
-	push(b, 101);
-	push(b, 132);
-*/
-	displayStack(a);
-//        displayStack(b);
 
-	b = insertionSort(a);
-	
+	if (checkElemsRepeat(a))
+	{
+		displayStack(a);
+		insertionSort(a);
+	}
+	else
+	{
+		exit(1);
+	}
+
 	printf("After editing the stack:\n");
 
-	doublyMaker(b);
+	displayStack(a);
 
-
-//	displayStack(b);
-	displayStackFromEnd(b);
-	
 	freeStack(a);
 //	freeStack(b);
 //	system("leaks another");

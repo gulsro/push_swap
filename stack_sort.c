@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-stack	*insertionSort(stack *a)
+stack	*stackSort(stack *a)
 {
 	stack	*b;
 	node	*temp;

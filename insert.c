@@ -1,24 +1,41 @@
 #include "push_swap.h"
 
-void insertion(stack *a, stack *b)
+node	*sortedInsert(stack *aStack, node *sorted, node *curr)
 {
-	node	*temp_forw;
-	node 	*temp_backw;
-	
-	temp = createNode();
-	temp = createNode();
-	if (!temp_forw || !temp_backw)
-		return ;
-	temp_forw = a->top->next;
-	temp_backw = a->top;
-	while (temp_forw && temp_forw->next)
+	node	*temp;
+
+	if (sorted == NULL || sorted->data >= curr->data)
 	{
-		while (temp_backw && temp_backw->prev)
-		{
-			if (temp_forw < temp_backw)
-			{
-				temp_forw = 
-			}
-		}
+		curr->next = sorted;
+		return (curr);
 	}
+	else
+	{
+		temp = sorted;
+		while (temp->next && temp->next->data < curr->data)
+		{
+			temp = temp->next;
+		}
+		curr->next = temp->next;
+		temp->next = curr;
+	}
+	return (sorted);
 }
+
+void	insertionSort(stack *aStack)
+{
+	node	*curr;
+	node	*curr_next;
+	node	*sorted;
+
+	curr = aStack->top;
+	sorted = NULL;
+	while (curr)
+	{
+		curr_next = curr->next;
+		sorted = sortedInsert(aStack, sorted, curr);
+		curr = curr_next;
+	}
+	aStack->top = sorted;
+}
+
