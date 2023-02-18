@@ -52,8 +52,8 @@ void	rrr(stack *a, stack *b);
 
 stack	*stackSort(stack *a);
 
-node	*sortedInsert(stack *aStack, node *sorted, node *curr);
-void	insertionSort(stack *aStack);
+stack	*sortedInsert(stack *a, stack *b, node *curr);
+void	insertionSort(stack *a);
 
 /*
 void	swap_int(int x, int y);
