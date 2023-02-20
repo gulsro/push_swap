@@ -35,13 +35,13 @@ void displayStackFromEnd(stack *aStack)
     else
         printf("The stack is empty.\n");
 }
-
+/*
 node	*last_elem(stack *aStack)
 {
 	node	*temp;
 
 	temp = aStack->next;
-}
+}*/
 int checkElemsRepeat(stack *aStack)
 {
 	node	*temp;

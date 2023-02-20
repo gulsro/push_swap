@@ -18,5 +18,9 @@ stack	*stackSort(stack *a)
 		}
 		push(b, temp->data);
 	}
-	return b;
+	while (!isEmpty(b))
+	{
+		_pop_push(b, a, "pa");
+	}
+	return a;
 }

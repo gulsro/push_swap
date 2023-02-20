@@ -3,21 +3,22 @@
 int main()
 {
 	stack *a;
-	stack *b;
+//	stack *b;
 	
 	a = initializeStack();
 //	b = initializeStack();
 
-	push(a, 11);
-	push(a, 2);
+	push(a, 10);
 	push(a, 3);
-	push(a, 22);
+	push(a, 2);
+	push(a, 9);
+	push(a, 30);
 
 
 	if (checkElemsRepeat(a))
 	{
 		displayStack(a);
-		insertionSort(a);
+		stackSort(a);
 	}
 	else
 	{
@@ -27,6 +28,7 @@ int main()
 	printf("After editing the stack:\n");
 
 	displayStack(a);
+//	displayStack(b);
 
 	freeStack(a);
 //	freeStack(b);
