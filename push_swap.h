@@ -52,7 +52,7 @@ void	rrr(stack *a, stack *b);
 
 stack	*stackSort(stack *a);
 
-stack	*sortedInsert(stack *a, stack *b, node *curr);
+node	*sortedInsert(stack *a, node *sorted, node *curr);
 void	insertionSort(stack *a);
 
 
