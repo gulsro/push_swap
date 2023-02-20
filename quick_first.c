@@ -13,12 +13,15 @@ void swap_int(int x, int y)
 node *lastNode(stack *s)
 {
 	node	*temp;
-
+	temp = createNode(0);
+	if (!temp)
+		return NULL;
 	temp = s->top;
 	while (temp && temp->next)
 	{
 		temp = temp->next;
 	}
+
 	return temp;
 }
 

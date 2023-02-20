@@ -18,7 +18,7 @@ int main()
 	if (checkElemsRepeat(a))
 	{
 		displayStack(a);
-		stackSort(a);
+		quickSort(a, a->top, a->end);
 	}
 	else
 	{

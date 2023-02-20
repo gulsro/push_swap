@@ -55,10 +55,10 @@ stack	*stackSort(stack *a);
 stack	*sortedInsert(stack *a, stack *b, node *curr);
 void	insertionSort(stack *a);
 
-/*
+
 void	swap_int(int x, int y);
 node	*lastNode(stack *s);
 node	*partition(stack *s, node *start, node *end);
 void	quickSort(stack *s, node *start, node *end);
-*/
+
 #endif
