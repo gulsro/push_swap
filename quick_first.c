@@ -59,7 +59,7 @@ void quickSort(stack *s, node *start, node *end)
 {
 	node *div;
 
-	if (start > end)
+	if (start  end)
 	{
 		div = partition(s, start, end);
 		quickSort(s, start, div);

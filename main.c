@@ -1,22 +1,27 @@
 #include "push_swap.h"
 
-int main()
+int main(int argc, char *argv[])
 {
 	stack *a;
-	stack *b;
+//	stack *b;
 	
 	a = initializeStack();
 //	b = initializeStack();
-
-	push(a, 3);
+/*
+	push(a, atoi(argv[]));
 	push(a, 2);
 	push(a, 9);
 	push(a, 30);
+*/
+	for (int i = 1; i < argc; i++)
+	{
+		push(a, atoi(argv[i]));
+	}
 
 	if (checkElemsRepeat(a))
 	{
 		displayStack(a);
-		insertionSort(a);
+		stackSort(a);
 	}
 	else
 	{
@@ -26,7 +31,7 @@ int main()
 	printf("After editing the stack:\n");
 
 	displayStack(a);
-	displayStack(b);
+//	displayStack(b);
 
 	freeStack(a);
 //	freeStack(b);
