@@ -23,6 +23,7 @@ void	displayStack(stack *aStack);
 void	displayStackFromEnd(stack *aStack);
 node	*lastNode(stack *aStack);
 void	doublyMaker(stack *aStack);
+node		*biggestNum(stack *aStack);
 
 stack	*initializeStack();
 node	*createNode(int value);
