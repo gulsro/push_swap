@@ -3,10 +3,10 @@
 int main(int argc, char *argv[])
 {
 	stack *a;
-//	stack *b;
+	stack *b;
 	
 	a = initializeStack();
-//	b = initializeStack();
+	b = initializeStack();
 /*
 	push(a, atoi(argv[]));
 	push(a, 2);
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	if (checkElemsRepeat(a))
 	{
 		displayStack(a);
-		stackSort(a);
+		insertionSortO(a, b);
 	}
 	else
 	{
@@ -31,10 +31,11 @@ int main(int argc, char *argv[])
 	printf("After editing the stack:\n");
 
 	displayStack(a);
-//	displayStack(b);
+
+	displayStack(b);
 
 	freeStack(a);
-//	freeStack(b);
+	freeStack(b);
 //	system("leaks another");
 }
 

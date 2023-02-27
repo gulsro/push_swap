@@ -1,13 +1,12 @@
 #include "push_swap.h"
 
-node *sortedInsert(stack *a, stack *b, node *curr)
+node *sortedInsertO(stack *a, stack *b, node *curr)
 {
 	node	*temp;
 
-	if (!isEmpty(b) || b->top->data >= curr->data)
+	if (!stackSize(b) || b->top->data >= curr->data)
 	{
 		_pop_push(a, b, "pb");
-		curr = b->top;
 		return curr;
 	}
 	else
@@ -17,15 +16,23 @@ node *sortedInsert(stack *a, stack *b, node *curr)
 		{
 			temp = temp->next;
 		}
-		_pop_push(b, a, "pa");
-		_swap(a, "sa");
 		_pop_push(a, b, "pb");
-		_pop_push(a, b, "pb");
+		if (lastNode(b) < b->top->data)
+		{
+			rb(b);
+		}
+		else
+			{
+				curr->next = temp->next;
+				temp->next = curr;
+			}	
+
+		
 	}
 	return (b->top);
 }
 
-void insertionSort(stack *a, stack *b)
+void insertionSortO(stack *a, stack *b)
 {
 	node	*curr;
 	node	*curr_next;

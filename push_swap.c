@@ -1,10 +1,21 @@
 #include "push_swap.h"
 
-int isEmpty(stack *aStack)
+int stackSize(stack *aStack)
 {
-	if (aStack->top == NULL)
-		return 1;
-	return 0;
+	int	size;
+	node	*temp;
+
+	size = 0;
+	temp = aStack->top;
+	if (temp != NULL)
+	{
+		while (temp->next)
+		{
+			size++;
+			temp = temp->next;	
+		}
+	}
+	return size;
 }
 
 node *createNode(int value)

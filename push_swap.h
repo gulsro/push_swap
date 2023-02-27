@@ -21,11 +21,12 @@ typedef struct Stack
 int	checkElemsRepeat(stack *aStack);
 void	displayStack(stack *aStack);
 void	displayStackFromEnd(stack *aStack);
+node	*lastNode(stack *aStack);
 void	doublyMaker(stack *aStack);
 
 stack	*initializeStack();
 node	*createNode(int value);
-int		isEmpty(stack *aStack);
+int	stackSize(stack *aStack);
 node	*pop(stack *aStack);
 void	freeStack(stack *aStack);
 void	 push(stack *aStack, int value);
@@ -52,9 +53,11 @@ void	rrr(stack *a, stack *b);
 
 stack	*stackSort(stack *a);
 
-node	*sortedInsert(stack *a, node *sorted, node *curr);
-void	insertionSort(stack *a);
+//node	*sortedInsert(stack *a, node *sorted, node *curr);
+//void	insertionSort(stack *a);
 
+node	*sortedInsertO(stack *a, stack *b, node *curr);
+void	insertionSortO(stack *a, stack *b);
 
 void	swap_int(int x, int y);
 node	*lastNode(stack *s);
