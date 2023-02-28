@@ -23,7 +23,7 @@ void	sortSort(stack *a, stack *b)
 				{
 					_swap(b, "sb");
 				}
-				else if (b->top->data < b->end->data)
+				else if (b->top->data < b->end->data) // PRIORITEITTTTTT!!
 				{
 					rb(b);
 				}
@@ -32,7 +32,7 @@ void	sortSort(stack *a, stack *b)
 	}
 	while (b->top)
 	{
-		if (b->top->data < b->top->next->data)
+		if (b->top->data < b->top->next->data) // compare it with max in stack b.
 			_swap(b, "sb");	
 		_pop_push(b, a, "pa");
 	}
