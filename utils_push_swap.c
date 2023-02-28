@@ -99,21 +99,26 @@ void doublyMaker(stack *aStack)
 
 node	*biggestNum(stack *aStack)
 {
-	int		min;
+	int		big;
 	node	*temp;
+	node	*flag_node;
 
-//	temp = createNode(0);
-//	if (!temp)
-//		return NULL;
 	temp = aStack->top;
-	min = 0;
-	while (temp)
+	big = 0;
+	while (temp->next)
 	{
-		temp = temp->next;
-		if (temp->data > min)
+	//	temp = temp->next;
+		if (temp->data > big)
 		{
-			min = temp->data;
+			big = temp->data;
+			flag_node = temp;
 		}
+		temp = temp->next;
 	}
-	return temp;
+	return flag_node;
 }
+/*
+int	checkStackSorted(stack *aStack)
+{
+	
+}*/

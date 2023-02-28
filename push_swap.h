@@ -54,6 +54,7 @@ void	rrr(stack *a, stack *b);
 
 stack	*stackSort(stack *a);
 
+void	sortSort(stack *a, stack *b);
 //node	*sortedInsert(stack *a, node *sorted, node *curr);
 //void	insertionSort(stack *a);
 

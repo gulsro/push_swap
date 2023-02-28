@@ -3,10 +3,10 @@
 int main(int argc, char *argv[])
 {
 	stack *a;
-//	stack *b;
+	stack *b;
 	
 	a = initializeStack();
-//	b = initializeStack();
+	b = initializeStack();
 /*
 	push(a, atoi(argv[]));
 	push(a, 2);
@@ -30,14 +30,16 @@ int main(int argc, char *argv[])
 */
 	displayStack(a);
 	printf("After editing the stack:\n");
-
-	printf("biggest num: %d\n", biggestNum(a)->data);
+	
+	printf("a size: %d\n", a->size);
+	printf("b size: %d\n", b->size);
+	sortSort(a, b);
 	displayStack(a);
 
-//	displayStack(b);
+	displayStack(b);
 
 	freeStack(a);
-//	freeStack(b);
+	freeStack(b);
 //	system("leaks another");
 }
 
