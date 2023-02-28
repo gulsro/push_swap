@@ -37,6 +37,7 @@ stack *initializeStack()
 	aStack = (stack *)malloc(sizeof(stack));
 	aStack->size = 0;
 	aStack->top = NULL;
+	aStack->end = NULL;
 	return (aStack);
 }
 
@@ -66,6 +67,7 @@ void push(stack *aStack, int value)
 	if (aStack->top == NULL) 
 	{	
 		aStack->top = newNode;
+		aStack->end = newNode;
 	}
 	else 
 	{

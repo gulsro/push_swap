@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 	}
 */
 	displayStack(a);
+
 	printf("After editing the stack:\n");
 	
 	printf("a size: %d\n", a->size);

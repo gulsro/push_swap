@@ -42,9 +42,7 @@ void    _pop_push(stack *from, stack *to, const char* msg)
         {
                 temp = pop(from);
                 push(to, temp->data);
-             	from->size--;
-		to->size++;
-	     	printf("%s\n", msg);
+		printf("%s\n", msg);
                 free(temp);
         }
 }
