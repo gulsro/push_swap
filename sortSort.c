@@ -19,21 +19,30 @@ void	sortSort(stack *a, stack *b)
 			_pop_push(a, b, "pb");
 			if (b->size > 1)
 			{
-				if (b->top->data < b->top->next->data || b->top->data < biggestNum(b)->data)
-				{
-					_swap(b, "sb");
-				}
-				else if (b->top->data < b->end->data) // PRIORITEITTTTTT!!
+				if (b->top->data < b->end->data)
 				{
 					rb(b);
 				}
+				else if (b->top->data < b->top->next->data || b->top->data < biggestNum(b)->data)
+                {
+                    _swap(b, "sb");
+                }
 			}
 		}
 	}
-	while (b->top)
+	while (b->top->next)
 	{
-		if (b->top->data < b->top->next->data) // compare it with max in stack b.
-			_swap(b, "sb");	
-		_pop_push(b, a, "pa");
+		if (b->top->data == biggestNum(b)->data)
+			_pop_push(b, a, "pa");
+		else if (b->top->data < b->top->next->data) // compare it with max in stack b.
+		{
+			_swap(b, "sb");
+			_pop_push(b, a, "pa");
+		}
+		else if (b->top->data < biggestNum(b)->data)
+		{
+			rb(b);	
+			_pop_push(b, a, "pa");
+		}
 	}
 }
