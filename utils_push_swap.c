@@ -48,28 +48,6 @@ node	*lastNode(stack *aStack)
 	return temp;
 }
 
-int checkElemsRepeat(stack *aStack)
-{
-	node	*temp;
-	node	*next_temp;
-
-	temp = aStack->top;
-	while (temp)
-	{
-		next_temp = temp->next;
-		while (next_temp)
-		{
-			if (temp->data == next_temp->data)
-			{
-				exit(1); 
-			}
-			next_temp = next_temp->next;
-		}
-		temp = temp->next;
-	}
-	return 1;	
-}
-
 void doublyMaker(stack *aStack)
 {
         node    *current;

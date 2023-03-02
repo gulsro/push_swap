@@ -20,6 +20,8 @@ typedef struct Stack
 }stack;
 
 int	checkElemsRepeat(stack *aStack);
+int	checkIfSorted(stack *aStack);
+
 void	displayStack(stack *aStack);
 void	displayStackFromEnd(stack *aStack);
 node	*lastNode(stack *aStack);

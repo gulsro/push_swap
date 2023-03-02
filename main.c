@@ -31,16 +31,18 @@ int main(int argc, char *argv[])
 	displayStack(a);
 
 	printf("After editing the stack:\n");
-	
+
 	printf("a size: %d\n", a->size);
 	printf("b size: %d\n", b->size);
+	
 	int count = sortSort(a, b);
+	
+	printf("count = %d\n", count);
+
 	displayStack(a);
 
 	displayStack(b);
 	
-	assert(count < 12);
-	printf("yes");
 
 	freeStack(a);
 	freeStack(b);
