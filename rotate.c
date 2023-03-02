@@ -24,8 +24,10 @@ void	_rotate(stack *s)
 			temp = temp->next;
 		}
 		temp->next = s->top;
+		s->end = temp;
 		s->top = s->top->next;
 		temp->next->next = NULL;
+		
 	}
 }
 

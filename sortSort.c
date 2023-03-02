@@ -1,6 +1,6 @@
 #include "push_swap.h"
 #include <unistd.h>
-void	sortSort(stack *a, stack *b)
+int sortSort(stack *a, stack *b)
 {
 	node *pivot;
 	int count = 0;	
@@ -12,7 +12,7 @@ void	sortSort(stack *a, stack *b)
 		if (pivot->data < a->top->data)
 		{
                         ra(a);
-						count++;
+			count++;
                 }
 		else if (pivot->data > a->top->data || pivot == a->top)
 		{
@@ -35,7 +35,7 @@ void	sortSort(stack *a, stack *b)
 			}
 		}
 	}
-	while (b->top->next)
+	while(b->top->next)
 	{
 		if (b->top->data == biggestNum(b)->data)
 		{
@@ -57,4 +57,8 @@ void	sortSort(stack *a, stack *b)
 			count++;
 		}
 	}
+	_pop_push(b, a, "pa");
+	count++;
+//	printf("count = %d\n", count);
+	return count;
 }

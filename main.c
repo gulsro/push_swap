@@ -34,10 +34,13 @@ int main(int argc, char *argv[])
 	
 	printf("a size: %d\n", a->size);
 	printf("b size: %d\n", b->size);
-	sortSort(a, b);
+	int count = sortSort(a, b);
 	displayStack(a);
 
 	displayStack(b);
+	
+	assert(count < 12);
+	printf("yes");
 
 	freeStack(a);
 	freeStack(b);
