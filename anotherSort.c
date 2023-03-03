@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int sortSort(stack *a, stack *b)
 {
         node *pivot;
@@ -28,13 +30,13 @@ int sortSort(stack *a, stack *b)
                                 count++;
                         }
                 }
+				if (pivot == a->top && a->size < 3 && checkIfSorted(a))
+                    break;
                 if (a->size > 1)
                 {
                         _pop_push(a, b, "pb");
                         count++;
                 }
-                if (a->size == 1)
-                        break ;
         }
         while (a->size != a_size)
         {

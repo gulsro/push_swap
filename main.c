@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
 	printf("b size: %d\n", b->size);
 	
 	int count = sortSort(a, b);
-	
+
+//	int count = biggestNum(a);	
 	printf("count = %d\n", count);
 
 	displayStack(a);
