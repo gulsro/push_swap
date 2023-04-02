@@ -5,10 +5,10 @@
 # include <stdio.h>
 # include <assert.h>
 
-#include "ft_printf/ft_printf.h"
+# include "ft_printf/ft_printf.h"
 # include <limits.h>
 
-typedef struct Node
+typedef	struct Node
 {
 	int	data;
 	int	order;
@@ -26,7 +26,7 @@ typedef struct Stack
 
 int	check_repeat(stack *aStack);
 int	check_sorted(stack *aStack);
-void	error_exit();
+void	error_exit(void);
 
 int	ft_atoi(char *str);
 int	check_all_digit(char **argv);
@@ -44,7 +44,7 @@ void	sort_5(stack *a, stack *b, int big_a, int small_a);
 void	large_sort(stack *a, stack *b);
 void	sort_as_index(stack *aStack);
 
-stack	*initialize_stack();
+stack	*initialize_stack(void);
 node	*create_node(int value);
 node	*pop(stack *aStack);
 void	free_stack(stack *aStack);
@@ -52,9 +52,9 @@ void	initial_stack_elem(stack *aStack, int value);
 void	assign_index(stack *aStack);
 
 //operations
-void		swap(int *x, int *y);
-void		sa(stack *a);
-void		sb(stack *b);
+void	swap(int *x, int *y);
+void	sa(stack *a);
+void	sb(stack *b);
 void	ss(stack *a, stack *b);
 void	_swap(stack *s, const char *msg);
 

@@ -2,49 +2,51 @@
 
 node	*create_node(int value)
 {
-	node	*newNode;
+	node	*new_node;
 
-	newNode = (node *)malloc(sizeof(node));
-	if (!newNode)
-		return NULL;
-	newNode->data = value;
-	newNode->next = NULL;
-	return (newNode);
+	new_node = (node *)malloc(sizeof(node));
+	if (!new_node)
+		return (NULL);
+	new_node->data = value;
+	new_node->next = NULL;
+	return (new_node);
 }
 
-stack	*initialize_stack()
+stack	*initialize_stack(void)
 {
-	stack *aStack;
+	stack	*my_stack;
 
-	aStack = (stack *)malloc(sizeof(stack));
-	aStack->size = 0;
-	aStack->top = NULL;
-	aStack->end = NULL;
-	return (aStack);
+	my_stack = (stack *)malloc(sizeof(stack));
+	if (!my_stack)
+		return (NULL);
+	my_stack->size = 0;
+	my_stack->top = NULL;
+	my_stack->end = NULL;
+	return (my_stack);
 }
 
-void	free_stack(stack *aStack)
+void	free_stack(stack *my_stack)
 {
 	node	*temp;
 	node	*next_temp;
 
-	temp = aStack->top;
+	temp = my_stack->top;
 	while (temp)
 	{
 		next_temp = temp->next;
 		free(temp);
 		temp = next_temp;
 	}
-	free(aStack);
+	free(my_stack);
 }
 
-void	assign_index(stack *aStack)
+void	assign_index(stack *my_stack)
 {
-        node	*temp;
-        int		i;
+	node	*temp;
+	int		i;
 
 	i = 0;
-	temp = aStack->top;
+	temp = my_stack->top;
 	while (temp)
 	{
 		temp->index = i;
@@ -53,22 +55,22 @@ void	assign_index(stack *aStack)
 	}
 }
 
-void	initial_stack_elem(stack *aStack, int value)
+void	initial_stack_elem(stack *my_stack, int value)
 {
-	node	*newNode;
+	node	*new_node;
 
-	newNode = create_node(value);
-	if (!newNode)
+	new_node = create_node(value);
+	if (!new_node)
 		return ;
-	if (aStack->top == NULL)
+	if (my_stack->top == NULL)
 	{
-		aStack->top = newNode;
-		aStack->end = newNode;
+		my_stack->top = new_node;
+		my_stack->end = new_node;
 	}
 	else
 	{
-		last_node(aStack)->next = newNode;
-		aStack->end = newNode;
+		last_node(my_stack)->next = new_node;
+		my_stack->end = new_node;
 	}
-	aStack->size++;
+	my_stack->size++;
 }

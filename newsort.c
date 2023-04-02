@@ -25,13 +25,8 @@ void	sort_3(stack *a)
 
 void	sort_4(stack *a, stack *b, int big_a)
 {
-	//int	big;
-
-//	big = biggest_num(a);
 	if (a->top->data == big_a)
-	{
 		_pop_push(a, b, "pb");
-	}
 	else if (last_node(a)->data == big_a)
 	{
 		rra(a);
@@ -69,8 +64,8 @@ void	sort_5(stack *a, stack *b, int big_a, int small_a)
 			_swap(a, "sa");
 			_pop_push(a, b, "pb");
 		}
-		else if (a->top->next->next->data == big_a ||
-			a->top->next->next->data == small_a)
+		else if (a->top->next->next->data == big_a
+			|| a->top->next->next->data == small_a)
 		{
 			ra(a);
 			ra(a);
