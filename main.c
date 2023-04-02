@@ -12,34 +12,20 @@ int main(int argc, char *argv[])
 	if (check_all_digit(argv) != 1)
 		error_exit();
 	for (int i = 1; i < argc; i++)
-	{
 		initial_stack_elem(a, ft_atoi(argv[i]));
-	}
 	if (check_repeat(a) != 1 || check_sorted(a) == 1)
-	{
 		error_exit();
-	}
 	assign_index(a);
-
-	printf("This is stack a BEGIN:\n");
-	display_stack(a);
-	display_stack(b);
-
-	node	*temp = a->top;
-	for (int i = 0; i < a->size; i++)
-	{
-		printf("initialized indexis = %d\n", temp->order);
-		temp = temp->next;
-	}
-
-	printf("LARGE_SORT:::\n");
-
-	large_sort(a, b);
-
-	display_stack(a);
-	display_stack(b);
-	
-
+	if (argc == 2)
+		sort_2(a);
+	else if (argc == 3)
+		sort_3(a);
+	else if (argc == 4)
+		sort_4(a, b, biggest_num(a));
+	else if (argc == 5)
+		sort_5(a, b, biggest_num(a), smallest_num(a));
+	else
+		large_sort(a, b);
 	free_stack(a);
 	free_stack(b);
 //	system("leaks another");

@@ -5,6 +5,7 @@
 # include <stdio.h>
 # include <assert.h>
 
+#include "ft_printf/ft_printf.h"
 # include <limits.h>
 
 typedef struct Node
@@ -39,7 +40,7 @@ int	smallest_num(stack *aStack);
 void	sort_2(stack *a);
 void	sort_3(stack *a);
 void	sort_4(stack *a, stack *b, int big_a);
-void	sort_5(stack *a, stack *b);
+void	sort_5(stack *a, stack *b, int big_a, int small_a);
 void	large_sort(stack *a, stack *b);
 void	sort_as_index(stack *aStack);
 

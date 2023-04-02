@@ -3,13 +3,13 @@
 void	ra(stack *a)
 {
 	_rotate(a);
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rb(stack *b)
 {
 	_rotate(b);
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
 void	_rotate(stack *s)

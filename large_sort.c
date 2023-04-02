@@ -53,7 +53,6 @@ void	large_sort(stack *a, stack *b)
 	int	size_a;
 	int	shift;
 	int	max_shift;
-	int count = 0;
 
 	max_shift = shift_number(a->size - 1);
 	shift = 0;
@@ -65,23 +64,13 @@ void	large_sort(stack *a, stack *b)
 		while (i < size_a)
 		{
 			if (((a->top->index >> shift) & 1) == 1)
-			{
 				ra(a);
-				count++;
-			}	
 			else
-			{
 				_pop_push(a, b, "pb");
-				count++;
-			}
 			i++;
 		}
 		while (b->size > 0)
-		{
 			_pop_push(b, a, "pa");
-			count++;
-		}
 		shift++;
 	}
-	printf("count: %d\n", count);
 }

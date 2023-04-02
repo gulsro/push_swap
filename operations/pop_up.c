@@ -36,7 +36,7 @@ void	_pop_push(stack *from, stack *to, const char *msg)
 	if (from->size > 0)
 	{
 		push(to, temp);
-		printf("%s\n", msg);
+		ft_printf("%s\n", msg);
 	}
 	from->top = from->top->next;
 	from->size--;

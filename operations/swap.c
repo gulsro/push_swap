@@ -24,6 +24,6 @@ void	_swap(stack *s, const char *msg)
 	if (s->size > 0)
 	{
 		swap(&s->top->data, &s->top->next->data);
-		printf("%s\n", msg);
+		ft_printf("%s\n", msg);
 	}
 }

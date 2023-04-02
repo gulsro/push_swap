@@ -53,31 +53,24 @@ void	sort_4(stack *a, stack *b, int big_a)
 	ra(a);
 }
 
-void	sort_5(stack *a, stack *b)
+void	sort_5(stack *a, stack *b, int big_a, int small_a)
 {
-	int	big;
-	int	small;
-
-	big = biggest_num(a);
-	small = smallest_num(a);
-	while (big == biggest_num(a) || small == smallest_num(a))
+	while (big_a == biggest_num(a) || small_a == smallest_num(a))
 	{
-		if (a->top->data == big || a->top->data == small)
-		{
+		if (a->top->data == big_a || a->top->data == small_a)
 			_pop_push(a, b, "pb");
-		}
-		else if (last_node(a)->data == big || last_node(a)->data == small)
+		else if (last_node(a)->data == big_a || last_node(a)->data == small_a)
 		{
 			rra(a);
 			_pop_push(a, b, "pb");
 		}
-		else if (a->top->next->data == big || a->top->next->data == small)
+		else if (a->top->next->data == big_a || a->top->next->data == small_a)
 		{
 			_swap(a, "sa");
 			_pop_push(a, b, "pb");
 		}
-		else if (a->top->next->next->data == big ||
-			a->top->next->next->data == small)
+		else if (a->top->next->next->data == big_a ||
+			a->top->next->next->data == small_a)
 		{
 			ra(a);
 			ra(a);
@@ -86,9 +79,9 @@ void	sort_5(stack *a, stack *b)
 	}
 	sort_3(a);
 	_pop_push(b, a, "pa");
-	if (a->top->data == big)
+	if (a->top->data == big_a)
 		ra(a);
 	_pop_push(b, a, "pa");
-	if (a->top->data == big)
+	if (a->top->data == big_a)
 		ra(a);
 }
