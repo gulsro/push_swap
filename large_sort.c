@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/29 21:34:58 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/03/30 12:05:19 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 12:54:50 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ static	int	shift_number(int biggest_num)
 	return (shift);
 }
 
-void	sort_as_index(stack *aStack)
+void	sort_as_index(t_stack *my_stack)
 {
-	node	*temp;
-	node	*runner;
+	t_node	*temp;
+	t_node	*runner;
 	int		assigned_i;
 
-	temp = aStack->top;
+	temp = my_stack->top;
 	while (temp)
 	{
-		runner = aStack->top;
+		runner = my_stack->top;
 		assigned_i = 0;
 		while (runner)
 		{
@@ -47,7 +47,7 @@ void	sort_as_index(stack *aStack)
 	}
 }
 
-void	large_sort(stack *a, stack *b)
+void	large_sort(t_stack *a, t_stack *b)
 {
 	int	i;
 	int	size_a;

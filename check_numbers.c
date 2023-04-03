@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   check_numbers.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/03 12:14:54 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/03 12:48:00 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	check_repeat(stack *aStack)
+int	check_repeat(t_stack *my_stack)
 {
-	node	*temp;
-	node	*next_temp;
+	t_node	*temp;
+	t_node	*next_temp;
 
-	temp = aStack->top;
+	temp = my_stack->top;
 	while (temp)
 	{
 		next_temp = temp->next;
@@ -22,12 +34,12 @@ int	check_repeat(stack *aStack)
 	return (1);
 }
 
-int	check_sorted(stack *aStack)
+int	check_sorted(t_stack *my_stack)
 {
-	node	*temp;
+	t_node	*temp;
 
-	temp = aStack->top;
-	if (aStack->size < 2)
+	temp = my_stack->top;
+	if (my_stack->size < 2)
 		return (1);
 	while (temp->next)
 	{

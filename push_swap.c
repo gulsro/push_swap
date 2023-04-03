@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   push_swap.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/03 12:11:23 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/03 12:59:25 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-node	*create_node(int value)
+t_node	*create_node(int value)
 {
-	node	*new_node;
+	t_node	*new_node;
 
-	new_node = (node *)malloc(sizeof(node));
+	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
 	new_node->data = value;
@@ -12,11 +24,11 @@ node	*create_node(int value)
 	return (new_node);
 }
 
-stack	*initialize_stack(void)
+t_stack	*initialize_stack(void)
 {
-	stack	*my_stack;
+	t_stack	*my_stack;
 
-	my_stack = (stack *)malloc(sizeof(stack));
+	my_stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!my_stack)
 		return (NULL);
 	my_stack->size = 0;
@@ -25,10 +37,10 @@ stack	*initialize_stack(void)
 	return (my_stack);
 }
 
-void	free_stack(stack *my_stack)
+void	free_stack(t_stack *my_stack)
 {
-	node	*temp;
-	node	*next_temp;
+	t_node	*temp;
+	t_node	*next_temp;
 
 	temp = my_stack->top;
 	while (temp)
@@ -40,9 +52,9 @@ void	free_stack(stack *my_stack)
 	free(my_stack);
 }
 
-void	assign_index(stack *my_stack)
+void	assign_index(t_stack *my_stack)
 {
-	node	*temp;
+	t_node	*temp;
 	int		i;
 
 	i = 0;
@@ -55,9 +67,9 @@ void	assign_index(stack *my_stack)
 	}
 }
 
-void	initial_stack_elem(stack *my_stack, int value)
+void	initial_stack_elem(t_stack *my_stack, int value)
 {
-	node	*new_node;
+	t_node	*new_node;
 
 	new_node = create_node(value);
 	if (!new_node)

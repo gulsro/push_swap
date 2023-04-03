@@ -1,34 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   pop_up.c                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/03 12:10:08 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/03 12:57:24 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void	push(stack *aStack, node *nood)
+void	push(t_stack *my_stack, t_node *nood)
 {
-	if (aStack->top == NULL)
+	if (my_stack->top == NULL)
 	{
-		aStack->top = nood;
-		aStack->end = nood;
+		my_stack->top = nood;
+		my_stack->end = nood;
 	}
 	else
 	{
-		nood->next = aStack->top;
-		aStack->top = nood;
-		aStack->end = nood;
+		nood->next = my_stack->top;
+		my_stack->top = nood;
+		my_stack->end = nood;
 	}
-	aStack->size++;
+	my_stack->size++;
 }
 
-void	pa(stack *a, stack *b)
+void	pa(t_stack *a, t_stack *b)
 {
 	_pop_push(a, b, "pa");
 }
 
-void	pb(stack *a, stack *b)
+void	pb(t_stack *a, t_stack *b)
 {
 	_pop_push(b, a, "pb");
 }
 
-void	_pop_push(stack *from, stack *to, const char *msg)
+void	_pop_push(t_stack *from, t_stack *to, const char *msg)
 {
-	node	*temp;
+	t_node	*temp;
 
 	temp = create_node(from->top->data);
 	if (!temp)

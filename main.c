@@ -1,23 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/03 12:12:19 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/03 12:58:59 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static  void    decide_sorting(stack *a, stack *b, int argc_number)
+static	void	decide_sorting(t_stack *a, t_stack *b, int argc_number)
 {
-        if (argc_number == 2)
-                sort_2(a);
-        else if (argc_number == 3)
-                sort_3(a);
-        else if (argc_number == 4)
-                sort_4(a, b, biggest_num(a));
-        else if (argc_number == 5)
-                sort_5(a, b, biggest_num(a), smallest_num(a));
-        else
-                large_sort(a, b);
+	if (argc_number == 2)
+		sort_2(a);
+	else if (argc_number == 3)
+		sort_3(a);
+	else if (argc_number == 4)
+		sort_4(a, b, biggest_num(a));
+	else if (argc_number == 5)
+		sort_5(a, b, biggest_num(a), smallest_num(a));
+	else
+		large_sort(a, b);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	stack	*a;
-	stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 	int		i;
 
 	if (argc < 2)
@@ -37,10 +49,8 @@ int main(int argc, char *argv[])
 	if (check_repeat(a) != 1 || check_sorted(a) == 1)
 		error_exit();
 	assign_index(a);
-	decide_sorting(a, b, argc);
+	decide_sorting(a, b, argc - 1);
 	free_stack(a);
 	free_stack(b);
 //	system("leaks another");
 }
-
-

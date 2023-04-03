@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   utils_push_swap.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/03 12:11:05 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/03 12:51:11 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	display_stack(stack *aStack)
+void	display_stack(t_stack *my_stack)
 {
-	node	*temp;
+	t_node	*temp;
 
-	temp = aStack->top;
-	if (aStack->size > 0)
+	temp = my_stack->top;
+	if (my_stack->size > 0)
 	{
-		printf("The stack:\n");
+		printf("The t_stack:\n");
 		while (temp)
 		{
 			printf("%d\n", temp->data);
@@ -15,16 +27,16 @@ void	display_stack(stack *aStack)
 		}
 	}
 	else
-		printf("The stack is empty.\n");
+		printf("The t_stack is empty.\n");
 }
 
-node	*last_node(stack *aStack)
+t_node	*last_node(t_stack *my_stack)
 {
-	node	*temp;
+	t_node	*temp;
 
-	if (!aStack->size)
+	if (!my_stack->size)
 		error_exit();
-	temp = aStack->top;
+	temp = my_stack->top;
 	while (temp->next)
 	{
 		temp = temp->next;
@@ -32,14 +44,14 @@ node	*last_node(stack *aStack)
 	return (temp);
 }
 
-int	biggest_num(stack *aStack)
+int	biggest_num(t_stack *my_stack)
 {
 	int		big;
-	node	*temp;
+	t_node	*temp;
 
-	if (!aStack->size)
+	if (!my_stack->size)
 		error_exit();
-	temp = aStack->top;
+	temp = my_stack->top;
 	big = temp->data;
 	while (temp->next)
 	{
@@ -52,14 +64,14 @@ int	biggest_num(stack *aStack)
 	return (big);
 }
 
-int	smallest_num(stack *aStack)
+int	smallest_num(t_stack *my_stack)
 {
 	int		small;
-	node	*temp;
+	t_node	*temp;
 
-	if (!aStack->size)
+	if (!my_stack->size)
 		error_exit();
-	temp = aStack->top;
+	temp = my_stack->top;
 	small = temp->data;
 	while (temp->next)
 	{
