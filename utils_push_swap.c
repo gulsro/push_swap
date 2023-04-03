@@ -6,12 +6,12 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 12:11:05 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 12:51:11 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 14:46:00 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 void	display_stack(t_stack *my_stack)
 {
 	t_node	*temp;
@@ -19,17 +19,17 @@ void	display_stack(t_stack *my_stack)
 	temp = my_stack->top;
 	if (my_stack->size > 0)
 	{
-		printf("The t_stack:\n");
+		ft_printf("The t_stack:\n");
 		while (temp)
 		{
-			printf("%d\n", temp->data);
+			ft_printf("%d\n", temp->data);
 			temp = temp->next;
 		}
 	}
 	else
-		printf("The t_stack is empty.\n");
+		ft_printf("The t_stack is empty.\n");
 }
-
+*/
 t_node	*last_node(t_stack *my_stack)
 {
 	t_node	*temp;

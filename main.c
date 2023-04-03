@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 12:12:19 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 12:58:59 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 14:46:38 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ int	main(int argc, char *argv[])
 	assign_index(a);
 	decide_sorting(a, b, argc - 1);
 	free_stack(a);
-	free_stack(b);
-//	system("leaks another");
+	free(b);
 }

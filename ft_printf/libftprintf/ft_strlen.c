@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 17:10:16 by gozturk       #+#    #+#                 */
-/*   Updated: 2022/11/16 14:17:52 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 14:24:34 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 size_t	ft_strlen(const char *s)
 {

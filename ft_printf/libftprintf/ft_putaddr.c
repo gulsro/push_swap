@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/16 12:45:00 by gozturk       #+#    #+#                 */
-/*   Updated: 2022/11/16 14:41:55 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 14:22:35 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_putaddr(unsigned long i)
 {

@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 12:10:54 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 12:28:07 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 13:39:18 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error_exit(void)
 {
-	printf("Error\n");
+	ft_printf("Error\n");
 	exit(1);
 }

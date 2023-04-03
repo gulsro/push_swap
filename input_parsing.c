@@ -6,17 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/29 21:28:25 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 12:28:51 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 13:44:04 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-static	int	ft_isspace(char c)
-{
-	return (c == ' ' || c == '\f' || c == '\n'
-		|| c == '\r' || c == '\t' || c == '\v');
-}*/
 
 static	int	ft_isdigit(int c)
 {

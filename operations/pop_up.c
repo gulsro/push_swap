@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 12:10:08 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 12:57:24 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 14:44:07 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,11 @@ void	_pop_push(t_stack *from, t_stack *to, const char *msg)
 {
 	t_node	*temp;
 
-	temp = create_node(from->top->data);
-	if (!temp)
-		return ;
-	if (from->size > 0)
-	{
-		push(to, temp);
-		ft_printf("%s\n", msg);
-	}
-	from->top = from->top->next;
+	if (!from->size)
+		exit(1);
+	temp = from->top->next;
+	push(to, from->top);
+	ft_printf("%s\n", msg);
+	from->top = temp;
 	from->size--;
 }

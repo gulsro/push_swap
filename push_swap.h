@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 12:17:46 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 13:00:38 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/03 13:38:49 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <assert.h>
 
 # include "ft_printf/ft_printf.h"
