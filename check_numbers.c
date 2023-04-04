@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 12:14:54 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 12:48:00 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/04 14:53:15 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_repeat(t_stack *my_stack)
 		{
 			if (temp->data == next_temp->data)
 			{
-				exit(1);
+				return (0);
 			}
 			next_temp = next_temp->next;
 		}
