@@ -26,6 +26,23 @@ static	void	decide_sorting(t_stack *a, t_stack *b, int argc_number)
 		large_sort(a, b);
 }
 
+static	void	check_repeat_sorted(t_stack *a)
+{
+	t_node	*temp;
+
+	if (check_repeat(a) != 1)
+		error_exit();
+	if (check_sorted(a) == 1)
+		exit(1);
+	temp = a->top;
+	while (temp)
+	{
+		if (temp->data > 2147483647 || temp->data < -2147483648)
+			error_exit();
+		temp = temp->next;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
@@ -33,21 +50,17 @@ int	main(int argc, char *argv[])
 	int		i;
 
 	if (argc < 2)
-		error_exit();
+		exit(1);
 	a = initialize_stack();
 	b = initialize_stack();
 	if (!a || !b)
 		error_exit();
 	if (check_all_digit(argv) != 1)
 		error_exit();
-	i = 1;
-	while (i < argc)
-	{
+	i = 0;
+	while (++i < argc)
 		initial_stack_elem(a, ft_atoi(argv[i]));
-		i++;
-	}
-	if (check_repeat(a) != 1 || check_sorted(a) == 1)
-		error_exit();
+	check_repeat_sorted(a);
 	assign_index(a);
 	decide_sorting(a, b, argc - 1);
 	free_stack(a);
