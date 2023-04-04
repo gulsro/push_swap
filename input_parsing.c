@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/29 21:28:25 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/03 13:44:04 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/04 12:55:28 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,11 @@ int	check_all_digit(char **argv)
 		i = 0;
 		while (argv[i_argv][i])
 		{
-			if (ft_isdigit(argv[i_argv][i]) || argv[i_argv][i] == '-')
+			if (ft_isdigit(argv[i_argv][i]) || (argv[i_argv][i] == '-'
+						&& ft_isdigit(argv[i_argv][i + 1])))
 				i++;
 			else
-			{
 				error_exit();
-			}
 		}
 		i_argv++;
 	}
@@ -42,9 +41,9 @@ int	check_all_digit(char **argv)
 
 int	ft_atoi(char *str)
 {
-	int			i;
+	int				i;
 	long long int	n;
-	int			sign;
+	int				sign;
 
 	i = 0;
 	n = 0;
