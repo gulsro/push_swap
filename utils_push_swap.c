@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
+
 void	display_stack(t_stack *my_stack)
 {
 	t_node	*temp;
@@ -29,7 +29,7 @@ void	display_stack(t_stack *my_stack)
 	else
 		ft_printf("The t_stack is empty.\n");
 }
-*/
+
 t_node	*last_node(t_stack *my_stack)
 {
 	t_node	*temp;

@@ -42,9 +42,9 @@ int	check_all_digit(char **argv)
 
 int	ft_atoi(char *str)
 {
-	int					i;
-	unsigned long int	n;
-	int					sign;
+	int			i;
+	long long int	n;
+	int			sign;
 
 	i = 0;
 	n = 0;
@@ -61,7 +61,7 @@ int	ft_atoi(char *str)
 		n = n * 10 + (str[i] - '0');
 		i++;
 	}
-	if (n > LONG_MAX && sign == -1)
+	if ((n * sign) > INT_MAX || (n * sign) < INT_MIN)
 		error_exit();
 	return ((int)(n * sign));
 }

@@ -28,19 +28,10 @@ static	void	decide_sorting(t_stack *a, t_stack *b, int argc_number)
 
 static	void	check_repeat_sorted(t_stack *a)
 {
-	t_node	*temp;
-
 	if (check_repeat(a) != 1)
 		error_exit();
 	if (check_sorted(a) == 1)
 		exit(1);
-	temp = a->top;
-	while (temp)
-	{
-		if (temp->data > 2147483647 || temp->data < -2147483648)
-			error_exit();
-		temp = temp->next;
-	}
 }
 
 int	main(int argc, char *argv[])
